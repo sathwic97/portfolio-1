@@ -20,10 +20,10 @@ export default function Home() {
 
     </section>
 
-    <section id="about" className='snap-center'>
+    <section id="about" className='snap-start'>
       <About/>
     </section>
-    
+
     </div>
   )
 }
