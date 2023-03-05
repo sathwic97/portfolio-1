@@ -13,7 +13,7 @@ export default function Hero({}: Props) {
             "Appreciate you checking my portfolio",
         ],
         loop: true,
-        delaySpeed: 3000,
+        delaySpeed: 2000,
     });
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
@@ -25,7 +25,7 @@ export default function Hero({}: Props) {
         width="200"
         height="200"/>
         <div className='z-50'>
-         <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Front-End Developer</h2>
+         <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Front-End Web Developer</h2>
          <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
          <span className='mr-3'>{text}</span>
          <Cursor cursorColor='#39FF14'/>
