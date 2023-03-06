@@ -35,8 +35,9 @@ export default function Header({}: Props) {
             bgColor='transparent'/>
         </motion.div>
 
-
-        <Link href="#contact">
+{/* 
+        <Link href='#contact'>
+            
         <motion.div
         initial={{
             x: 500,
@@ -59,7 +60,9 @@ export default function Header({}: Props) {
             bgColor='transparent'/>
             <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>Send me a mail!</p>
         </motion.div>
-        </Link>
+        
+        </Link> */}
+
     </header>
     
   )

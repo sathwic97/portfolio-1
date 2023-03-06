@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import {PhoneIcon, MapPinIcon, EnvelopeIcon} from '@heroicons/react/24/solid';
 import { useForm, Resolver } from 'react-hook-form';
 
+
 type FormValues = {
     name: string;
     email:string;
