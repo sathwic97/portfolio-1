@@ -37,7 +37,10 @@ transition={{
         transition={{
             duration:1.5,
         }}
-        className="mt-16 -mb-20 sm:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-96
+        viewport={{
+            once: true
+        }}
+        className="mt-16 -mb-20 sm:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 object-top
         xl:w-[256px] xl:h-[384px]"
 
          />

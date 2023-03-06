@@ -19,7 +19,7 @@ export default function Hero({}: Props) {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles/>
 
-        <Image className='relative rounded-full h-32 w-32 mx-auto object-cover '
+        <Image priority className='relative rounded-full h-32 w-32 mx-auto object-cover'
         src='/img1.webp'
         alt="my image"
         width="200"
