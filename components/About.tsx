@@ -1,5 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion';
+import Image from 'next/image';
 
 
 type Props = {}
@@ -22,10 +23,11 @@ transition={{
     max-w-7xl px-10 justify-evenly mx-auto items-center'>
 
         <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">About</h3>
-        <motion.img 
-        src="/img2.JPG"
-       
-        initial={{
+        <motion.div
+        className='relative mt-16 -mb-20 sm:mb-0 flex-shrink-0 w-36 h-36 md:w-64 md:h-96 
+        xl:w-[256px] xl:h-[384px]'
+          
+          initial={{
             x:-200,
             opacity:0
 
@@ -39,11 +41,14 @@ transition={{
         }}
         viewport={{
             once: true
-        }}
-        className="mt-16 -mb-20 sm:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 object-top
-        xl:w-[256px] xl:h-[384px]"
+        }}><Image
+        src="/img2.JPG"
 
+     alt='another picture of me'
+        className="rounded-full md:rounded-lg object-cover"
+fill
          />
+         </motion.div>
          <div className="px-0 space-y-10 md:px-10">
             <h4 className="text-4xl font-semibold" >A little <span className='text-[#39FF14]'>intro</span></h4>
            <p className='text-sm'>I'm a B. Com Computer Applications Graduate of 2021 

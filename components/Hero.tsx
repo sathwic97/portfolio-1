@@ -3,6 +3,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
 import Link from 'next/link';
+import {motion} from 'framer-motion';
 
 type Props = {}
 
@@ -18,12 +19,28 @@ export default function Hero({}: Props) {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles/>
+<motion.div
+initial={{
+  opacity:0,
 
-        <Image priority className='relative rounded-full h-32 w-32 mx-auto object-cover'
+}}
+whileInView={{
+  opacity:1
+}}
+transition={{
+  duration:1.2
+}}
+whileHover={{
+  scale:1.25
+}}
+
+className='relative h-32 w-32 mx-auto'>
+        <Image priority className='rounded-full  object-cover transition ease-in-out'
         src='/img1.webp'
+        fill
         alt="my image"
-        width="200"
-        height="200"/>
+       />
+       </motion.div>
         <div className='z-50'>
          <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Front-End Web Developer</h2>
          <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
