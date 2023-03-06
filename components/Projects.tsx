@@ -24,7 +24,7 @@ export default function Projects({}: Props) {
     text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
         <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Projects</h3>
     
-<div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
+<div className='relative w-full flex scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-scroll overflow-y-hidden snap-x
 snap-mandatory z-20'>
  
 {projects.map((project,i)=>(
@@ -61,7 +61,7 @@ viewport={{once:true}} className='relative h-28 w-28'
     </span>{' '}
     Project 1
 </h4>
-<motion.p className='text-center text-sm md:text-left opacity-0 group-hover:opacity-75 transition duration-300 ease-in-out overflow-x-clip overflow-y-scroll max-h-28'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ducimus nisi? Temporibus exercitationem voluptatum sequi consequatur veritatis perspiciatis earum animi ad minima aperiam? Dolorem iure voluptas porro soluta, veritatis dicta. Eveniet repudiandae, aperiam magni numquam laboriosam voluptatem aspernatur eos, non amet cumque beatae possimus vero, deserunt soluta. Ratione aperiam repellat iste temporibus sed distinctio nihil obcaecati facere tenetur! Unde, quibusdam ullam. Neque quod ducimus, ab corporis at fugiat iure vitae quia nemo, eum veritatis vero perspiciatis modi incidunt? Modi asperiores suscipit eaque magni optio tempore, amet vero, esse aut blanditiis omnis quod expedita perferendis dicta maxime ipsa? Aliquid, dolorum beatae.   Lorem ipsum dolor, sit amet consectetur
+<motion.p className='text-center text-sm md:text-left opacity-0 group-hover:opacity-75 transition duration-300 ease-in-out scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-clip overflow-y-scroll max-h-28'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ducimus nisi? Temporibus exercitationem voluptatum sequi consequatur veritatis perspiciatis earum animi ad minima aperiam? Dolorem iure voluptas porro soluta, veritatis dicta. Eveniet repudiandae, aperiam magni numquam laboriosam voluptatem aspernatur eos, non amet cumque beatae possimus vero, deserunt soluta. Ratione aperiam repellat iste temporibus sed distinctio nihil obcaecati facere tenetur! Unde, quibusdam ullam. Neque quod ducimus, ab corporis at fugiat iure vitae quia nemo, eum veritatis vero perspiciatis modi incidunt? Modi asperiores suscipit eaque magni optio tempore, amet vero, esse aut blanditiis omnis quod expedita perferendis dicta maxime ipsa? Aliquid, dolorum beatae.   Lorem ipsum dolor, sit amet consectetur
  adipisicing elit. Unde dolores, nihi
  l dolorum, dignissimos quibusdam repellendus, accus
  antium voluptatem minus id dolorem et pe

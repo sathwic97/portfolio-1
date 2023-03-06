@@ -51,7 +51,7 @@ export default function ContactMe({}: Props) {
         <input {...register('email')} type='email' placeholder='Email' className='contactInput h-9'/>
     </div>
     <input {...register('subject')} type='text' placeholder='Subject' className='contactInput h-9'/>
-    <textarea {...register('message')} placeholder='Message' className='contactInput overflow-x-clip overflow-y-scroll max-h-24'/>
+    <textarea {...register('message')} placeholder='Message' className='contactInput scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-y-auto max-h-24'/>
     <button className='bg-[#39FF14] py-3 px-6 rounded-md text-[#242424] font-bold text-lg' type='submit'>Submit</button>
 </form>
 

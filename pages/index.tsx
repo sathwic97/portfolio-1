@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
+    <div className='bg-[rgb(36,36,36)] scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin text-white h-screen snap-y snap-mandatory
      overflow-y-scroll overflow-x-hidden z-0'>
       <Head>
         <title>portfolio</title>
