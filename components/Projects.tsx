@@ -49,9 +49,9 @@ justify-center p-20 md:p-44 w-screen h-screen'>
 initial={{y: -300,opacity:0}}
 whileInView={{y:0,opacity:1}}
 transition={{duration:1.2}}
-viewport={{once:true}}
+viewport={{once:true}} className='relative h-28 w-28'
 >
-<Image src='/img2.jpg' alt='image' width={100} height={100} />
+<Image src='/img2.jpg' alt='image' fill />
 </motion.div>
 
 <div className='space-y-10 px-0 md:px-10 max-w-6xl max-h-36'>

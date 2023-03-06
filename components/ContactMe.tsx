@@ -1,12 +1,28 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import {PhoneIcon, MapPinIcon, EnvelopeIcon} from '@heroicons/react/24/solid';
+import { useForm, Resolver } from 'react-hook-form';
+
+type FormValues = {
+    name: string;
+    email:string;
+    subject: string;
+    message:string;
+  };
 
 type Props = {}
 
 export default function ContactMe({}: Props) {
+    const { register, handleSubmit} = useForm<FormValues>();
+    const onSubmit = handleSubmit((formData) => window.location.href=`mailto:sathwic97@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.name}.
+    My message : ${formData.message} \n (${formData.email})`);
   return (
-    <div className='h-screen flex relative flex-col text-center
+    <motion.div 
+    initial={{opacity:0}}
+    transition={{duration:1.2}}
+    whileInView={{opacity:1}}
+
+     className='h-screen flex relative flex-col text-center
      md:text-left md:flex-rowmax-w-7xl px-10 justify-evenly mx-auto items-center'>
         <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact</h3>
 
@@ -29,19 +45,19 @@ export default function ContactMe({}: Props) {
     </div>
 </div>
 
-<form className='flex flex-col space-y-2 w-fit mx-auto'>
+<form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
     <div className='flex space-x-2'>
-        <input type='text' placeholder='Name' className='contactInput h-9'/>
-        <input type='email' placeholder='Email' className='contactInput h-9'/>
+        <input {...register('name')} type='text' placeholder='Name' className='contactInput h-9'/>
+        <input {...register('email')} type='email' placeholder='Email' className='contactInput h-9'/>
     </div>
-    <input type='text' placeholder='Subject' className='contactInput h-9'/>
-    <textarea placeholder='Message' className='contactInput overflow-x-clip overflow-y-scroll max-h-24'/>
-    <button className='bg-[#39FF14] py-5 px-10 rounded-md text-black font-bold text-lg' type='submit'>Submit</button>
+    <input {...register('subject')} type='text' placeholder='Subject' className='contactInput h-9'/>
+    <textarea {...register('message')} placeholder='Message' className='contactInput overflow-x-clip overflow-y-scroll max-h-24'/>
+    <button className='bg-[#39FF14] py-3 px-6 rounded-md text-[#242424] font-bold text-lg' type='submit'>Submit</button>
 </form>
 
 </div>
 
-    </div>
+    </motion.div>
   )
 }
 
