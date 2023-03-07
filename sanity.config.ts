@@ -5,7 +5,7 @@ import {schemaTypes} from './schemas'
 
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_ID!;
-const dataset = process.env.NEXT_PUBLIC_DATASET!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath:'/studio',
@@ -13,8 +13,8 @@ export default defineConfig({
 
   title: 'Sathwic portfolio Studio',
 
-  projectId: 'v5jmg2zj',
-  dataset: 'production',
+  projectId,
+  dataset,
 
   plugins: [deskTool(), visionTool()],
 
