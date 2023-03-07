@@ -12,10 +12,10 @@ export default function Skill({directionLeft}: Props) {
         <motion.div
         initial={{
             opacity:0,
-            x: directionLeft ? -200 : 200,
+            x: directionLeft ? -100 : 100,
         }}
         transition={{
-            duration:1,
+            duration:1.5,
         }}
         whileInView={{
             opacity:1,

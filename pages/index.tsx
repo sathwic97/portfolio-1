@@ -46,7 +46,7 @@ export default function Home() {
 <Link href="#hero">
 <footer className='sticky bottom-5 w-full cursor-pointer'>
 <div className='flex items-center justify-center'>
-  <button type="button" className='rounded-md bg-[#39FF14]/40 opacity-30 hover:opacity-80 text-gray-400/80 text-lg' ><HomeIcon className='text-[#242424] h-7 w-10 animate-pulse'/></button>
+  <button type="button" className='rounded-md bg-[#39FF14]/40 opacity-30 hover:opacity-80 text-gray-400/80 text-lg' ><HomeIcon className='text-[#242424] h-7 w-14 animate-pulse'/></button>
 
 </div>
 </footer>
