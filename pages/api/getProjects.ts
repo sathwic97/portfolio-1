@@ -18,14 +18,14 @@ type Data ={
 
 }
 
-export default async function handler(
+// export default async function handler(
   
-    req: NextApiRequest,
-    res:NextApiResponse<Data>
+//     req: NextApiRequest,
+//     res:NextApiResponse<Data>
 
-){
+// ){
 
-    const projects:Project[] = await sanityClient.fetch(query);
+//     const projects:Project[] = await sanityClient.fetch(query);
 
-    res.status(200).json({projects});
-}
+//     res.status(200).json({projects});
+// }
