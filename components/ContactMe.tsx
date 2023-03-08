@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import {PhoneIcon, MapPinIcon, EnvelopeIcon} from '@heroicons/react/24/solid';
-import { useForm, Resolver } from 'react-hook-form';
+import { useForm, Resolver, SubmitHandler } from 'react-hook-form';
 
 
 type FormValues = {
@@ -15,7 +15,7 @@ type Props = {}
 
 export default function ContactMe({}: Props) {
     const { register, handleSubmit} = useForm<FormValues>();
-    const onSubmit = handleSubmit((formData) => window.location.href=`mailto:sathwic97@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.name}.
+    const onSubmit: SubmitHandler<FormValues> = ((formData) => window.location.href=`mailto:sathwic97@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.name}.
     My message : ${formData.message} \n (${formData.email})`);
   return (
     <motion.div 
