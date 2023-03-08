@@ -1,15 +1,15 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
-// import { PageInfo } from '@/typings';
-// import { urlFor } from '@/sanity';
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
 
 type Props = {
-    // pageInfo: PageInfo;
+    pageInfo: PageInfo;
 }
 
-export default function About({  }: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
 
@@ -46,7 +46,7 @@ transition={{
             once: true
         }}><motion.img
 
-        // src={urlFor(pageInfo?.profilePicture).url()}
+        src={urlFor(pageInfo?.profilePicture).url()}
 
      alt='another picture of me'
         className="rounded-full md:rounded-lg object-cover w-36 h-36 sm:w-44 sm:h-44 md:w-64 md:h-96 
@@ -55,11 +55,8 @@ transition={{
          />
          </motion.div>
          <div className="px-0 space-y-10 md:px-10">
-
             <h4 className="text-4xl md:text-3xl mt-5 font-semibold" >A little <span className='text-[#39FF14]'>intro</span></h4>
-           {/* <p className='sm:text-md md:text-lg text-xs scrollbar-thumb-[#39FF14]/80 w-fit h-auto overflow-y-auto'>{pageInfo?.backgroundInformation}</p> */}
-
-         
+           <p className='sm:text-md md:text-lg text-xs scrollbar-thumb-[#39FF14]/80 w-fit h-auto overflow-y-auto'>{pageInfo?.backgroundInformation}</p>
             
          </div>
          </motion.div>

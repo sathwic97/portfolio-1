@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
-// import { Project } from '@/typings';
-// import { urlFor } from '@/sanity';
+import { Project } from '@/typings';
+import { urlFor } from '@/sanity';
 
 type Props = {
-    // projects: Project[];
+    projects: Project[];
 }
 
-export default function Projects({  }: Props) {
+export default function Projects({ projects }: Props) {
     
   return (
     <motion.div
@@ -31,7 +31,7 @@ export default function Projects({  }: Props) {
 <div className='relative w-full flex scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-scroll overflow-y-hidden snap-x
 snap-mandatory z-20'>
  
-{/* {projects?.map((project,i)=>(
+{projects?.map((project,i)=>(
 
 <motion.div
 // initial={{
@@ -47,8 +47,8 @@ snap-mandatory z-20'>
 // }}
 
  key={project._id} className='flex-shrink-0 snap-center flex flex-col space-y-5 items-center
-justify-center p-20 md:p-44 w-screen h-screen'> */}
-{/* 
+justify-center p-20 md:p-44 w-screen h-screen'>
+
 <motion.div
  className='relative mt-7'
 >
@@ -85,15 +85,15 @@ src={urlFor(project?.image).url()} className='object-cover h-24 w-24 sm:h-36 sm:
 <motion.p className='text-center text-sm sm:text-lg md:text-left w-full transition duration-300 ease-in-out scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-clip overflow-y-scroll max-h-28 sm:h-auto'>
 {project.summary}
 
-</motion.p> */}
+</motion.p>
 
-{/* </div>
+</div>
 
 
 </motion.div>
 
 
-))} */}
+))}
 
 
 

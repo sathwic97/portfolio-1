@@ -4,17 +4,17 @@ import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
 import Link from 'next/link';
 import {motion} from 'framer-motion';
-// import { PageInfo } from '@/typings';
-// import { urlFor } from '@/sanity';
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
 type Props = {
-  // pageInfo: PageInfo;
+  pageInfo: PageInfo;
 }
 
-export default function Hero({ }: Props) {
+export default function Hero({pageInfo}: Props) {
     const [text,count] = useTypewriter({
         words:[
-            // `Hey there, ${pageInfo?.name} here!`,
+            `Hey there, ${pageInfo?.name} here!`,
             "I dream of working in metaverse",
         ],
         loop: true,
@@ -43,14 +43,14 @@ whileHover={{
 }}
 
 className='relative  mx-auto'>
-        {/* <motion.img className='rounded-full h-32 w-32 object-cover transition ease-in-out'
+        <motion.img className='rounded-full h-32 w-32 object-cover transition ease-in-out'
         src={urlFor(pageInfo?.heroImage).url()}
         
         alt="my image"
-       /> */}
+       />
        </motion.div>
         <div className='z-50'>
-         {/* <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2> */}
+         <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
          <h1 className='text-4xl lg:text-5xl font-semibold px-10'>
          <span className='mr-3'>{text}</span><Cursor cursorColor='#39FF14'/>
          </h1>
