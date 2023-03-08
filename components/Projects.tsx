@@ -1,11 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
+import { Project } from '@/typings';
+import { urlFor } from '@/sanity';
 
-type Props = {}
+type Props = {
+    projects: Project[];
+}
 
-export default function Projects({}: Props) {
-    const projects = [1,2,3,4,5] ;
+export default function Projects({ projects }: Props) {
+    
   return (
     <motion.div
     
@@ -27,7 +31,7 @@ export default function Projects({}: Props) {
 <div className='relative w-full flex scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-scroll overflow-y-hidden snap-x
 snap-mandatory z-20'>
  
-{projects.map((project,i)=>(
+{projects?.map((project,i)=>(
 
 <motion.div
 // initial={{
@@ -42,31 +46,44 @@ snap-mandatory z-20'>
     
 // }}
 
- key={project} className='group relative flex-shrink-0 snap-center flex flex-col space-y-5 items-center
+ key={project._id} className='flex-shrink-0 snap-center flex flex-col space-y-5 items-center
 justify-center p-20 md:p-44 w-screen h-screen'>
 
 <motion.div
-initial={{y: -300,opacity:0}}
+ className='relative mt-7'
+>
+<motion.img
+initial={{y: -200,opacity:0}}
 whileInView={{y:0,opacity:1}}
 transition={{duration:1.2}}
-viewport={{once:true}} className='relative h-28 w-28'
->
-<Image src='/img2.jpg' alt='image' fill />
+viewport={{once:true}}
+whileHover={{
+    scale:1.5
+}}
+
+src={urlFor(project?.image).url()} className='object-cover h-24 w-24 sm:h-36 sm:w-36 md:w-[600px] xl:w-[900px]' alt='image'/>
 </motion.div>
 
-<div className='space-y-10 px-0 md:px-10 max-w-6xl max-h-36'>
+<div className='space-y-10 px-0 md:px-10 max-w-6xl'>
 <h4 className='text-4xl font-semibold text-center'>
-    <span className='underline decoration-[#39FF14]/50'>
+    
         Case Study {i + 1} of {projects.length}
-    </span>{' '}
-    Project 1
+    {' '}
+    <span className='text-[#39FF14]/50 uppercase'> {project.title}</span>
 </h4>
-<motion.p className='text-center text-sm md:text-left opacity-0 group-hover:opacity-75 transition duration-300 ease-in-out scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-clip overflow-y-scroll max-h-28'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ducimus nisi? Temporibus exercitationem voluptatum sequi consequatur veritatis perspiciatis earum animi ad minima aperiam? Dolorem iure voluptas porro soluta, veritatis dicta. Eveniet repudiandae, aperiam magni numquam laboriosam voluptatem aspernatur eos, non amet cumque beatae possimus vero, deserunt soluta. Ratione aperiam repellat iste temporibus sed distinctio nihil obcaecati facere tenetur! Unde, quibusdam ullam. Neque quod ducimus, ab corporis at fugiat iure vitae quia nemo, eum veritatis vero perspiciatis modi incidunt? Modi asperiores suscipit eaque magni optio tempore, amet vero, esse aut blanditiis omnis quod expedita perferendis dicta maxime ipsa? Aliquid, dolorum beatae.   Lorem ipsum dolor, sit amet consectetur
- adipisicing elit. Unde dolores, nihi
- l dolorum, dignissimos quibusdam repellendus, accus
- antium voluptatem minus id dolorem et pe
- rspiciatis quaerat deserunt mollitia nostrum nobis num
- quam facilis! Hic quo aut similique ex iste, maiores rem doloremque  
+<div className='flex items-center space-x-2 justify-center'>
+{project.technologies.map((technology)=>(
+
+  <motion.img
+  key={technology._id}
+  src={urlFor(technology?.image).url()}
+  alt=""
+  className='h-7 w-7'/>
+
+))}
+</div>
+<motion.p className='text-center text-sm sm:text-lg md:text-left w-full transition duration-300 ease-in-out scrollbar-track-gray-400/20 scrollbar-thumb-[#39FF14]/80 scrollbar-thin overflow-x-clip overflow-y-scroll max-h-28 sm:h-auto'>
+{project.summary}
 
 </motion.p>
 
